@@ -7,6 +7,78 @@ body{
 
 /*Section 1-menu*/
 
+.box {
+    width: 140px;
+    height: auto;
+    float: left;
+    transition: .5s linear;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 15px;
+    text-align: center;
+    margin: 0 5px;
+    background: transparent;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    font-weight: 700;
+  }
+  
+  .box:before {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 100%;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid transparent;
+    box-sizing: border-box;
+    transform: translateX(100%);
+  }
+  
+  .box:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    border-top: 4px solid transparent;
+    border-right: 4px solid transparent;
+    box-sizing: border-box;
+    transform: translateX(-100%);
+  }
+  
+  .box:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  .box:hover:before {
+    border-color: #262626;
+    height: 100%;
+    transform: translateX(0);
+    transition: .3s transform linear, .3s height linear .3s;
+  }
+  
+  .box:hover:after {
+    border-color: #262626;
+    height: 100%;
+    transform: translateX(0);
+    transition: .3s transform linear, .3s height linear .5s;
+  }
+  
+  button {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: transparent;
+  }
+
 .background-1{
     background: url(images/background-1.png);
     background-position: center;
@@ -14,19 +86,70 @@ body{
    height: 1000px;
    }
 
-.button-first{
+
+.btn{
+    background: transparent;
+    border: none;
+    position: relative;
+    left: 100px;
+    height: 59px;
     width: 199px;
-height: 59px;
-border-radius: 30px;
+    cursor: pointer;
+
+}
+
+.btn-back{
+    border-radius: 30px;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: #121212;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s;
+}
+
+.btn-text{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    border-radius: 30px;
 background-color: #ff491f;
 border: 4px solid #121212;
-position: relative;
-left: 140px;
-bottom: 60px;
-font-size: 21px;
-font-family: "Oswald", sans-serif;
-    font-weight: 700;
-    color: #fff;
+    color: #000;
+    top: 0;
+    left: 0;
+    position: absolute;
+    font-size: 21px;
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn img{
+    opacity: 0;
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 100px;
+    height: 100px;
+    z-index: 3;
+    transition: all 0.3s;
+}
+
+.btn:hover .btn-text{
+    transform: translate(-15px, -10px) rotate(-2deg);
+}
+
+.btn:hover .btn-back{
+    transform: rotate(-2deg);
+}
+.btn:hover img{
+    opacity: 1;
 }
 
 .div-menu-display-css{
@@ -40,12 +163,15 @@ grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;
 place-items: center;
 }
 
+
+
 .elements{
     font-size: 18px;
     font-family: "Montserrat", sans-serif;
     color: #fff;
     font-weight: 700;
 }
+
 
 .menu-display{
     display: flex;
@@ -57,9 +183,20 @@ place-items: center;
 .images-display{
     display: flex;
     justify-content: right;
+    overflow: hidden;
     position: relative;
     top: 260px;
     right: 90px;
+}
+
+.images-display img{
+    width: 150%;
+    height: 480px;
+    transition: scale 400ms;
+}
+
+.images-display:hover img{
+    scale: 120%;
 }
 
 .green-color{
@@ -128,17 +265,71 @@ display: flex;
 justify-content: center;
 }
 
-.button-section-second{
+
+.btm{
+    background: transparent;
+    border: none;
+    position: relative;
+    left: 200px;
+    cursor: pointer;
+  width: 172px;
+height: 59px;
+margin: 0;
+
+}
+
+.btm-back{
+    border-radius: 30px;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: #121212;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s;
+}
+
+.btm-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    position: absolute;
+    border-radius: 26px;
     width: 172px;
-height: 51px;
-border-radius: 26px;
+    height: 59px;
 background-color: #dd7ca3;
 border: 3px solid #121212;
 color: #fff;
-margin: 0;
-place-content: center;
-position: relative;
- left: 220px;
+font-size: 18px;
+font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btm img{
+    opacity: 0;
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 100px;
+    height: 100px;
+    z-index: 3;
+    transition: all 0.3s;
+}
+
+.btm:hover .btm-text{
+    transform: translate(-15px, -10px) rotate(-2deg);
+}
+
+.btm:hover .btm-back{
+    transform: rotate(-2deg);
+}
+.btm:hover img{
+    opacity: 1;
 }
 
 .images-element{
@@ -275,6 +466,72 @@ padding: 0;
       max-height: 580px;
    }
 
+   .bth{
+    background: transparent;
+    border: none;
+    position: relative;
+    width: 172px;
+    height: 51px;
+    cursor: pointer;
+    margin-top: 80px;
+}
+
+.bth-back{
+    border-radius: 30px;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: #121212;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s;
+}
+
+.bth-text{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    border-radius: 26px;
+    background-color: #dd7ca3;
+    border: 3px solid #121212;
+    font-size: 21px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 700;
+    font-family: "Oswald", sans-serif;
+    top: 0;
+    left: 0;
+    position: absolute;
+    transition: all 0.3s;
+}
+
+.bth img{
+    opacity: 0;
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 100px;
+    height: 100px;
+    z-index: 3;
+    transition: all 0.3s;
+}
+
+.bth:hover .bth-text{
+    transform: translate(-15px, -10px) rotate(-2deg);
+}
+
+.bth:hover .bth-back{
+    transform: rotate(-2deg);
+}
+.bth:hover img{
+    opacity: 1;
+}
+
 .second-images{
     background-image: url(images/Ballontext.png);
     height: 493px;
@@ -307,20 +564,7 @@ font-weight: 700;
 font-family: "Oswald", sans-serif;
    }
 
-   .heart-button{
-    width: 172px;
-height: 51px;
-border-radius: 26px;
-background-color: #dd7ca3;
-border: 3px solid #121212;
-font-size: 21px;
-letter-spacing: 1px;
-text-transform: uppercase;
-color: #ffffff;
-font-weight: 700;
-font-family: "Oswald", sans-serif;
-margin-top: 80px;
-   }
+  
    
    .paragraf-heart{
        max-width: 361px;
@@ -397,7 +641,13 @@ text-align: center;
 
 
 
-.button-green-five-section{
+
+.button-green-five-section {
+    --width: 150px;
+    --timing: 2s;
+    border: 0;
+    width: var(--width);
+    padding-block: 1em;
     width: 320px;
 height: 57px;
 border-radius: 10px 10px 0px 0px;
@@ -411,10 +661,38 @@ background-color: #549661;
 border: 3px solid #121212;
 position: relative;
 bottom: 285px;
-margin: 0;
-padding: 0;
-}
-
+    transition: all 0.2s;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .button-green-five-section:hover {
+    background-image: linear-gradient(
+      to right,
+      rgb(250, 82, 82),
+      rgb(250, 82, 82) 16.65%,
+      rgb(190, 75, 219) 16.65%,
+      rgb(190, 75, 219) 33.3%,
+      rgb(76, 110, 245) 33.3%,
+      rgb(76, 110, 245) 49.95%,
+      rgb(64, 192, 87) 49.95%,
+      rgb(64, 192, 87) 66.6%,
+      rgb(250, 176, 5) 66.6%,
+      rgb(250, 176, 5) 83.25%,
+      rgb(253, 126, 20) 83.25%,
+      rgb(253, 126, 20) 100%,
+      rgb(250, 82, 82) 100%
+    );
+    animation: var(--timing) linear dance6123 infinite;
+    transform: scale(1.1) translateY(-1px);
+  }
+  
+  @keyframes dance6123 {
+    to {
+      background-position: var(--width);
+    }
+  }
+  
 
 
 .button-arrow{
@@ -616,11 +894,14 @@ margin-top: 30px;
   }
   
 
-  .button-red-six-section{
+  .bts{
+    background: transparent;
+    border: none;
+    position: relative;
     width: 219px;
     height: 56px;
-    border-radius: 28px;
-    background-color: #dd491f;
+    border-radius: 30px;
+    background-color: #000000;
     border: 4px solid #121212;
     font-size: 18px;
 letter-spacing: 0px;
@@ -629,7 +910,64 @@ color: #fefefe;
 font-weight: 600;
 font-family: "Oswald", sans-serif;
 place-items: center;
-  }
+    cursor: pointer;
+}
+
+.bts-back{
+    border-radius: 30px;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: #121212;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s;
+}
+
+.bts-text{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    border-radius: 26px;
+    background-color: #dd491f;
+    border: 3px solid #121212;
+    font-size: 21px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 700;
+    font-family: "Oswald", sans-serif;
+    top: 0;
+    left: 0;
+    position: absolute;
+    transition: all 0.3s;
+}
+
+.bts img{
+    opacity: 0;
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 100px;
+    height: 100px;
+    z-index: 3;
+    transition: all 0.3s;
+}
+
+.bts:hover .bts-text{
+    transform: translate(-15px, -10px) rotate(-2deg);
+}
+
+.bts:hover .bts-back{
+    transform: rotate(-2deg);
+}
+.bts:hover img{
+    opacity: 1;
+}
 
   .div-button-red{
     display: flex;
@@ -639,6 +977,7 @@ place-items: center;
 
   /*section -7*/
 
+  
   .background-seven-section{
     background-color: #121212;
     height: 577px;
@@ -668,6 +1007,25 @@ justify-content: right;
   .search{
     display: flex;
     justify-content: right;
+    margin-right: 50px;
+    place-items: center;
+   
+  }
+
+  .search-icon{
+    width: 100px;
+    height: 40px;
+    background-color: #FFB439;
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: 10px 10px  #dd491f;
+
+  }
+
+  .search-width{
+    width: 300px;
+    height: 36px;
+    border-radius: 0px 10px 10px 0px;
+    box-shadow: 10px 10px  #dd491f;
   }
 
   .text-ofcolums-seven-section{

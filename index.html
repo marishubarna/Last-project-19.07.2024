@@ -17,10 +17,29 @@
             <div class="menu-display">
                 <div class="div-menu-display-css">
                     <div class="elements"><img src="images/title1.png" height="15px" alt=""></div>
-                    <div class="elements">HOME</div>
-                    <div class="elements">ABOUT</div>
-                    <div class="elements">SERVICES</div>
-                    <div class="elements">CONTACT</div>
+                    <div class="elements"><button>
+                        <span class="box">
+                            HOME
+                        </span>
+                    </button></div>
+                    <div class="elements">
+                        <button>
+                            <span class="box">
+                                ABOUT
+                            </span>
+                        </button></div>
+                    <div class="elements">
+                        <button>
+                            <span class="box">
+                                SERVICES
+                            </span>
+                        </button></div>
+                    <div class="elements">
+                        <button>
+                            <span class="box">
+                                CONTACT
+                            </span>
+                        </button></div>
                     <div class="elements green-color">SIGN IN</div>
                 </div>
             </div>
@@ -29,10 +48,14 @@
                     <h1 class="first-title"><strong> THE BEST </strong> CRYPTOCURRENCY EXCHANGE</h1>
                     <h2 class="text-first">INVEST & EARN</h2>
                     <p class="first-paragraf">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores aliquid, porro perspiciatis vitae id distinctio animi quidem esse eum inventore?</p>
-                    <button class="button-first" type="submit">GET STARTED</button>
+                    <button class="button-first btn" type="submit">
+                        <img src="images/money.png" alt="">
+                        <span class="btn-text">GET STARTED</span>
+                        <span class="btn-back"></span>
+                    </button>
                 </div>
                 <div class="images-display">
-                    <img src="images/Ilustration.png" height="488px" alt="">
+                    <img src="images/Ilustration.png"  alt="">
                 </div>
             </div>
         </div>
@@ -44,7 +67,11 @@
                 <div class="white-block-css">
                     <h3>&#191;WHAT IS ?</h3>
                     <p class="paragraf-second-section">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae quibusdam omnis, ut facere quod optio?</p>
-                    <button class="button-section-second" type="submit">READ MORE</button>
+                    <button class=" btm" type="submit" id="ButtonId1" onclick="handleClick()">
+                        <img src="images/Cat'spaws.png" alt="">
+                        <span class="btm-text">GET STARTED</span>
+                        <span class="btm-back"></span>
+                    </button>
                 </div>
             </div>
             <div class="images-element"><img src="images/Ilustration2.png" height="526px" alt=""></div>
@@ -95,7 +122,10 @@
             <div class="text-heart">
                 <h6 class="title-heart">Lorem ipsum dolor sit amet consectetur adipisicing.</h6>
                 <p class="paragraf-heart">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure ex amet eligendi sit quis officiis laborum blanditiis earum. Rem, accusantium?</p>
-                <button type="submit" class="heart-button">READ MORE</button>
+                <button type="submit" class="heart-button bth"> 
+                    <img src="images/money.png" alt="">
+                    <span class="bth-text">READ MORE</span>
+                    <span class="bth-back"></span></button>
             </div>
         </div>
     </section>
@@ -140,7 +170,10 @@
                 <input style="display: grid; grid-area:element2;" class="input-element" placeholder="Mail" type="text">
                 <textarea style="display: grid; grid-area:element3;" placeholder="Message"></textarea>
                 <div class="div-button-red">
-                    <button style="display: grid; grid-area:element4;" type="submit" class="button-red-six-section">SEND MESSAGE</button>
+                    <button style="display: grid; grid-area:element4;" type="submit" class="button-red-six-section bts">
+                        <img src="images/Cat'spaws.png" alt="">
+                        <span class="bts-text">SEND MESSAGE</span>
+                        <span class="bts-back"></span></button>
                 </div>
             </div>
         </div>
@@ -179,9 +212,16 @@
          </div>
         </div>
         <div class="search">
-      <img src="images/Shape.png" height="61px" alt="">
+            
+            <button type="submit" class="search-icon">
+                <img src="images/search-icon.png" height="36px" alt="">
+            </button>
+     <form action="" class="saerch">
+        <input class="search-width" type="text">
+     </form>
         </div>
             </div>
             </section>
+            <script src="index.js"></script>
 </body>
 </html>
